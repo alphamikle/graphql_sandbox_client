@@ -1,0 +1,52 @@
+type Bill {
+  id: ID!
+  amount: Float!
+  user: User
+}
+
+type Query {
+  bill(id: ID!): Bill!
+  bills: [Bill!]!
+  user(id: ID!): User!
+  users: [User!]!
+}
+
+input CBill {
+  id: ID!
+  amount: Float!
+}
+
+input UBill {
+  id: ID!
+  amount: Float
+}
+
+type Mutation {
+  createBill(cBill: CBill!): Bill!
+  updateBill(uBill: UBill!): Bill!
+  createUser(cUser: CUser!): User!
+  updateUser(uUser: UUser!): User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  age: Int!
+  email: String
+  bills: [Bill!]
+}
+
+input CUser {
+  id: ID!
+  name: String!
+  age: Int!
+  email: String
+  bills: [CBill!]
+}
+
+input UUser {
+  id: ID!
+  name: String
+  age: Int
+  email: String
+}
