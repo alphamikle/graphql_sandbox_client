@@ -1,0 +1,1 @@
+This a client for [graphql_sandbox_server](https://github.com/alphamikle/graphql_sandbox_server) with will show you how you can use a Graphq
